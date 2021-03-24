@@ -25,12 +25,33 @@ pdb_file = abs_path_to_pdb_file
 
 inp = CmdInput(
     command=["gmx", "pdb2gmx", "-f", pdb_file, "-ff", "amber99", "-water", "none"],
-    infiles=[abs_path_to_pdb_file],
     outfiles=["conf.gro", "topol.top", "posre.itp"],
 )
 outp = CmdComponent.compute(inp)
 
-conf, top, posre = outp.outfiles["conf.gro"], outp.outfiles["topol.top"], outp.outfiles["posre.itp"]
+conf, top, posre = (
+    outp.outfiles["conf.gro"],
+    outp.outfiles["topol.top"],
+    outp.outfiles["posre.itp"],
+)
+```
+
+### Specifying scratch dir
+```python
+inp = CmdInput(
+    command=["gmx", "pdb2gmx", "-f", pdb_file, "-ff", "amber99", "-water", "none"],
+    infiles=[pdb_file], # copy file to scratch tmp dir
+    scratch_directory=path_to_scratch_dir,
+    outfiles=outfiles,
+    scratch_messy=True, # retain scratch tmp dir
+)
+outp = CmdComponent.compute(inp)
+
+conf, top, posre = (
+    outp.outfiles["conf.gro"],
+    outp.outfiles["topol.top"],
+    outp.outfiles["posre.itp"],
+)
 ```
 
 ### Copyright
