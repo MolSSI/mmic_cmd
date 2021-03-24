@@ -46,4 +46,12 @@ class CmdComponent(SpecificComponent):
             environment=env,
         )
 
-        return exe_success, self.output()(**proc)
+        if exe_success:
+            return exe_success, self.output()(
+                outfiles=proc.get("outfiles"),
+                stdout=proc.get("stdout"),
+                stderr=proc.get("stderr"),
+                scratch_directory=proc.get("scratch_directory"),
+            )
+        else:
+            raise RuntimeError(proc.stderr)
