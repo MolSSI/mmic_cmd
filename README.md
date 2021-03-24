@@ -1,11 +1,21 @@
 mmic_util
 ==============================
 [//]: # (Badges)
-[![GitHub Actions Build Status](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/mmic_util/workflows/CI/badge.svg)](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/mmic_util/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/mmic_util/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/mmic_util/branch/master)
+[![GitHub Actions Build Status](https://github.com/MolSSI/mmic_util/workflows/CI/badge.svg)](https://github.com/MolSSI/mmic_util/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/MolSSI/mmic_util/branch/main/graph/badge.svg)](https://codecov.io/gh/MolSSI/mmic_util/branch/main)
 
+Package that provides general-purpose utility components.
 
-A short description of the project.
+## Usage
+```python
+from mmic_util.models import CmdInput
+from mmic_util.components import CmdComponent
+
+inp = CmdInput(engine="grep", args=["-r", pattern, path_to_file])
+outp = CmdComponent.compute(inp)
+
+stdout, stderr = outp.stdout, outp.stderr
+```
 
 ### Copyright
 
