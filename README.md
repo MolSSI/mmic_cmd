@@ -5,8 +5,9 @@ mmic_util
 [![codecov](https://codecov.io/gh/MolSSI/mmic_util/branch/main/graph/badge.svg)](https://codecov.io/gh/MolSSI/mmic_util/branch/main)
 
 Package that provides general-purpose utility components.
+A more thorough description to be followed in the near future ...
 
-## Usage
+## Snippet
 ```python
 from mmic_util.models import CmdInput
 from mmic_util.components import CmdComponent
