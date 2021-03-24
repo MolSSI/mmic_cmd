@@ -14,4 +14,9 @@ class CmdInput(ProcInput):
         None,
         description="Output file path(s) or name(s).",
     )
-    flags: Optional[List[str]] = Field(None, description="List of command-line flags.")
+    args: Optional[List[str]] = Field(None, description="Positional command-line arguments or flags. "
+        "Order is preserved. E.g. for the command: 'ls . -ltr', args=['.', '-ltr'].")
+    kwargs: Optional[Dict[str, str]] = Field(
+        None, description="Additional keyword arguments to pass to engine. Order is unimportant. "
+        "E.g. for the command: 'exec --ifile path_to_file', kwargs={'--ifile': path_to_file}."
+    )
