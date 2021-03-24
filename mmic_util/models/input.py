@@ -9,9 +9,10 @@ class CmdInput(ProtoModel):
     """ Input schema for qcengine.execute """
 
     command: List[str] = Field(..., description=".")
-    infiles: List[str] = Field(
+    infiles: Dict[str, str] = Field(
         None,
-        description="Input file path(s) or name(s).",
+        description="Input file names (names, not full paths) and contents. "
+        "to be written in scratch dir. May be {}.",
     )
     outfiles: Optional[List[str]] = Field(
         None,
