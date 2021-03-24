@@ -12,7 +12,7 @@ A more thorough description to be followed in the near future ...
 from mmic_util.models import CmdInput
 from mmic_util.components import CmdComponent
 
-inp = CmdInput(engine="grep", args=["-r", pattern, path_to_file])
+inp = CmdInput(engine="grep", args=[pattern, "-r", path_to_files])
 outp = CmdComponent.compute(inp)
 
 stdout, stderr = outp.stdout, outp.stderr
