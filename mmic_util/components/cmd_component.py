@@ -29,7 +29,7 @@ class CmdComponent(SpecificComponent):
             inputs = self.input()(**inputs)
 
         env = os.environ.copy()
-        scratch_directory = None
+        scratch_directory = inputs.scratch_directory
 
         if inputs.config:
             env["MKL_NUM_THREADS"] = str(config.ncores)
@@ -51,6 +51,7 @@ class CmdComponent(SpecificComponent):
             outfiles=inputs.outfiles,
             scratch_directory=scratch_directory,
             scratch_name=inputs.scratch_name,
+            scratch_messy=inputs.scratch_messy,
             timeout=inputs.timeout,
             environment=env,
         )
