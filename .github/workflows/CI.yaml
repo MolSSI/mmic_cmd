@@ -51,13 +51,18 @@ jobs:
         auto-activate-base: false
         show-channel-urls: true
 
+    - name: Upgrade pip if necessary
+      run: |
+        python -m pip install --upgrade pip
+
+
     - name: Install pkg dependencies
       run: |
         git clone https://github.com/MolSSI/mmic
-        cd mmic && pip install . && cd ..
+        cd mmic && python -m pip install . && cd ..
         git clone https://github.com/MolSSI/mmelemental
-        cd mmelemental && pip install . && cd ..
-        pip install -r requirements.txt
+        cd mmelemental && python -m pip install . && cd ..
+        python -m pip install -r requirements.txt
 
     - name: Install package
 
