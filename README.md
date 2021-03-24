@@ -25,7 +25,7 @@ pdb_file = abs_path_to_pdb_file
 
 inp = CmdInput(
     command=["gmx", "pdb2gmx", "-f", pdb_file, "-ff", "amber99", "-water", "none"],
-    infiles={pdb_filename: abs_path_to_pdb_file},
+    infiles=[abs_path_to_pdb_file],
     outfiles=["conf.gro", "topol.top", "posre.itp"],
 )
 outp = CmdComponent.compute(inp)
