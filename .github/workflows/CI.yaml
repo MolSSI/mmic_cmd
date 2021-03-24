@@ -51,6 +51,14 @@ jobs:
         auto-activate-base: false
         show-channel-urls: true
 
+    - name: Install pkg dependencies
+      run: |
+        git clone https://github.com/MolSSI/mmic
+        cd mmic && pip install . && cd .. && rm -rf mmic
+        git clone https://github.com/MolSSI/mmelemental
+        cd mmelemental && pip install . && cd .. && rm -rf mmelemental
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; f
+
     - name: Install package
 
       # conda setup requires this special shell
@@ -58,7 +66,6 @@ jobs:
       run: |
         python -m pip install .
         conda list
-
 
     - name: Run tests
 
