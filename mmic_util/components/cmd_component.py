@@ -3,6 +3,7 @@ from mmelemental.models.util.output import FileOutput
 from mmic.components.blueprints import SpecificComponent
 from typing import Any, Dict, List, Tuple, Optional, Union
 from ..models import CmdOutput, CmdInput
+import ntpath
 import os
 
 __all__ = ["CmdComponent"]
@@ -36,9 +37,17 @@ class CmdComponent(SpecificComponent):
 
             scratch_directory = config.scratch_directory
 
+        infiles = {}
+        if inputs.infiles:
+            flag = inputs.as_binary or "r"
+            for fpath in inputs.infiles:
+                fname = ntpath.basename(fpath)
+                with open(fpath, flag) as fp:
+                    infiles[fname] = fp.read()
+
         exe_success, proc = execute(
             command=inputs.command,
-            infiles=inputs.infiles,
+            infiles=infiles,
             outfiles=inputs.outfiles,
             scratch_directory=scratch_directory,
             scratch_name=inputs.scratch_name,
@@ -54,4 +63,4 @@ class CmdComponent(SpecificComponent):
                 scratch_directory=proc.get("scratch_directory"),
             )
         else:
-            raise RuntimeError(proc.stderr)
+            raise RuntimeError(proc.get("stderr"))
