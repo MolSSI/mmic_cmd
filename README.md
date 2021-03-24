@@ -8,14 +8,30 @@ Package that provides general-purpose utility components.
 A more thorough description to be followed in the near future ...
 
 ## Snippet
+### Pattern match with grep
 ```python
 from mmic_util.models import CmdInput
 from mmic_util.components import CmdComponent
 
-inp = CmdInput(engine="grep", args=[pattern, "-r", path_to_files])
+inp = CmdInput(command=[pattern, "-r", path_to_files])
 outp = CmdComponent.compute(inp)
 
 stdout, stderr = outp.stdout, outp.stderr
+```
+
+### Pdb2Gmx with Gromacs
+```python
+pdb_file = os.path.abspath("../MMElemental/mmelemental/data/molecules/alanine.pdb")
+outfiles = ["conf.gro", "topol.top", "posre.itp"]
+
+inp = CmdInput(
+    command=["gmx", "pdb2gmx", "-f", pdb_file, "-ff", "amber99", "-water", "none"],
+    infiles={"alanine.pdb": pdb_file},
+    outfiles=outfiles,
+)
+outp = CmdComponent.compute(inp)
+
+conf, top, posre = outp.outfiles["conf.gro"], outp.outfiles["topol.top"], outp.outfiles["posre.itp"]
 ```
 
 ### Copyright
