@@ -87,7 +87,7 @@ class CmdComponent(SpecificComponent):
             for key, val in input_model.kwargs.items():
                 cmd.extend([key, val])
 
-        cmd.extend(input_model.flags)
+        cmd.extend(input_model.args)
         env = os.environ.copy()
 
         if config:
