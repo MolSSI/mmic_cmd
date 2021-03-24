@@ -21,13 +21,12 @@ stdout, stderr = outp.stdout, outp.stderr
 
 ### Pdb2Gmx with Gromacs
 ```python
-pdb_file = os.path.abspath("../MMElemental/mmelemental/data/molecules/alanine.pdb")
-outfiles = ["conf.gro", "topol.top", "posre.itp"]
+pdb_file = abs_path_to_pdb_file
 
 inp = CmdInput(
     command=["gmx", "pdb2gmx", "-f", pdb_file, "-ff", "amber99", "-water", "none"],
-    infiles={"alanine.pdb": pdb_file},
-    outfiles=outfiles,
+    infiles={pdb_filename: abs_path_to_pdb_file},
+    outfiles=["conf.gro", "topol.top", "posre.itp"],
 )
 outp = CmdComponent.compute(inp)
 
