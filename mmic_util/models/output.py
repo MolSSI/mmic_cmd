@@ -16,7 +16,7 @@ class CmdOutput(ProtoModel):
         description="List of FileOutput objects. See the :class: ``mmelemental.models.FileOutput``.",
     )
     proc: Optional[Popen]
-    scratch_directory: Optional[PosixPath[str]]
+    scratch_directory: Optional[PosixPath]
 
     class Config(ProtoModel.Config):
         arbitrary_types_allowed = True
