@@ -10,15 +10,17 @@ import os
 
 cwd = os.getcwd()
 
+
 def test_mmic_util_imported():
     """Sample test, will always pass so long as import statement worked"""
     assert "mmic_util" in sys.modules
 
 
 def test_mmic_util_ls():
-    inp = mmic_util.models.CmdInput(engine="ls", args=[cwd, "-ltr"])
+    inp = mmic_util.models.CmdInput(command=["ls", "-ltr", cwd])
     return mmic_util.components.CmdComponent.compute(inp)
 
+
 def test_mmic_util_grep():
-    inp = mmic_util.models.CmdInput(engine="grep", args=["-r", "mmic", cwd])
+    inp = mmic_util.models.CmdInput(command=["grep", "-r", "mmic", cwd])
     return mmic_util.components.CmdComponent.compute(inp)
