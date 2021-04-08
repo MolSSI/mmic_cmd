@@ -4,7 +4,6 @@ A short description of the project.
 """
 
 # Add imports here
-from .mmic_util import *
 from .components import *
 from .models import *
 from . import models
