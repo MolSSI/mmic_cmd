@@ -1,4 +1,4 @@
-from mmelemental.models import ProtoModel, FileOutput
+from mmelemental.models import ProtoModel
 from pydantic import Field
 from typing import Optional, List, Dict
 

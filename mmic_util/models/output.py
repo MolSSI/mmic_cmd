@@ -1,6 +1,6 @@
-from mmelemental.models import ProtoModel, FileOutput
+from mmelemental.models import ProtoModel
 from pydantic import Field
-from typing import Optional, List, Dict
+from typing import Optional, Dict
 from pathlib import PosixPath
 from subprocess import Popen
 
