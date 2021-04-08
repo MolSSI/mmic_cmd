@@ -9,7 +9,6 @@ __all__ = ["CmdComponent"]
 
 
 class CmdComponent(SpecificComponent):
-    """ Cmd process: build_input() -> run() -> parse_output() -> [clean()] """
 
     @classmethod
     def input(cls):
