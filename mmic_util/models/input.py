@@ -17,6 +17,11 @@ class CmdInput(ProtoModel):
         None,
         description="Output file name(s).",
     )
+    outfiles_load: Optional[bool] = Field(
+        False,
+        description="If set to True, output files are loaded in memory. Otherwise, the posix paths "
+        "are returned instead (default).",
+    )
     as_binary: Optional[List[str]] = Field(
         None, description="Keys of `infiles` or `outfiles` to be treated as bytes."
     )
