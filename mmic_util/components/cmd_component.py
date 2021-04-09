@@ -9,7 +9,6 @@ __all__ = ["CmdComponent"]
 
 
 class CmdComponent(SpecificComponent):
-
     @classmethod
     def input(cls):
         return CmdInput
