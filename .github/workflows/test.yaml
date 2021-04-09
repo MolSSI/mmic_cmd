@@ -60,6 +60,8 @@ jobs:
         cd mmic && python -m pip install . && cd ..
         git clone https://github.com/MolSSI/mmelemental
         cd mmelemental && python -m pip install . && cd ..
+        git clone --single-branch https://github.com/Andrew-AbiMansour/QCEngine --branch execute
+        cd QCEngine && python -m pip install . && cd ..
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Install package
