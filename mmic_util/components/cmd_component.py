@@ -46,6 +46,7 @@ class CmdComponent(SpecificComponent):
             command=inputs.command,
             infiles=infiles,
             outfiles=inputs.outfiles,
+            outfiles_load=inputs.outfiles_load,
             scratch_directory=scratch_directory,
             scratch_name=inputs.scratch_name,
             scratch_messy=inputs.scratch_messy,
