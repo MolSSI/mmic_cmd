@@ -1,6 +1,6 @@
 from mmelemental.models import ProtoModel
 from pydantic import Field
-from typing import Optional, Dict, Union
+from typing import Optional, Dict, Union, Any
 from pathlib import PosixPath
 from subprocess import Popen
 
@@ -11,7 +11,7 @@ class CmdOutput(ProtoModel):
     stdout: str = Field(..., description="Standard output.")
     stderr: Optional[str] = Field(None, description="Standard error.")
     log: Optional[str] = Field(None, description="Logging output.")
-    outfiles: Optional[Union[Dict[str, str], Dict[str, Dict[str, str]], None]] = Field(
+    outfiles: Optional[Union[Dict[str, Any], None]] = Field(
         None,
         description="List of FileOutput objects. See the :class: ``mmelemental.models.FileOutput``.",
     )
