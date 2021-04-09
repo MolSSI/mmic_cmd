@@ -8,52 +8,52 @@ mmic_util
 Package that provides general-purpose utility components.
 A more thorough description to be followed in the near future ...
 
-## Snippet
-### Pattern match with grep
+## CmdComponent
+### General execution
 ```python
-from mmic_util.models import CmdInput
 from mmic_util.components import CmdComponent
 
-inp = CmdInput(command=[pattern, "-r", path_to_files])
+inp = {
+    "command": [executable, "--arg", arg, "--out", ofile_name],
+    "outfiles": [ofile_name],
+}
 outp = CmdComponent.compute(inp)
 
 stdout, stderr = outp.stdout, outp.stderr
+ofile_content = outp.outfiles[ofile_name]
 ```
 
-### Pdb2Gmx with Gromacs
+### Specifying scratch dir & input files
 ```python
-pdb_file = abs_path_to_pdb_file
+inp = {
+    "command": [executable, "--in", ifile_name, "--out", ofile_name],
+    "infiles": [ifile_name], # copy file to scratch tmp dir
+    "outfiles": [ofile_name],
+    "scratch_directory": path_to_scratch_dir,
+}
 
-inp = CmdInput(
-    command=["gmx", "pdb2gmx", "-f", pdb_file, "-ff", "amber99", "-water", "none"],
-    outfiles=["conf.gro", "topol.top", "posre.itp"],
-)
 outp = CmdComponent.compute(inp)
 
-conf, top, posre = (
-    outp.outfiles["conf.gro"],
-    outp.outfiles["topol.top"],
-    outp.outfiles["posre.itp"],
-)
+stdout, stderr = outp.stdout, outp.stderr
+scratch_dir = outp.scratch_directory
 ```
 
-### Specifying scratch dir
+### Tracking outfiles (no loading in memory)
 ```python
-inp = CmdInput(
-    command=["gmx", "pdb2gmx", "-f", pdb_file, "-ff", "amber99", "-water", "none"],
-    infiles=[pdb_file], # copy file to scratch tmp dir
-    scratch_directory=path_to_scratch_dir,
-    outfiles=outfiles,
-    scratch_messy=True, # retain scratch tmp dir
-)
+inp = {
+    "command": [executable, "--in", ifile_name, "--out", ofile_name],
+    "infiles": [ifile_name], # copy file to scratch tmp dir
+    "outfiles": [ofile_name],
+    "outfiles_load": False,
+    "scratch_directory": path_to_scratch_dir,
+}
+
 outp = CmdComponent.compute(inp)
 
-conf, top, posre = (
-    outp.outfiles["conf.gro"],
-    outp.outfiles["topol.top"],
-    outp.outfiles["posre.itp"],
-)
+stdout, stderr = outp.stdout, outp.stderr
+ofile_path = outp.outfiles[ofile_name]
 ```
+
 
 ### Copyright
 
