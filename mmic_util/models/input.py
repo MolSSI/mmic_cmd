@@ -6,7 +6,7 @@ __all__ = ["CmdInput"]
 
 
 class CmdInput(ProtoModel):
-    """ Input schema for qcengine.execute """
+    """ Input model for command-line execution. """
 
     command: List[str] = Field(..., description=".")
     infiles: List[str] = Field(
@@ -18,7 +18,7 @@ class CmdInput(ProtoModel):
         description="Output file name(s).",
     )
     outfiles_load: Optional[bool] = Field(
-        False,
+        True,
         description="If set to True, output files are loaded in memory. Otherwise, the posix paths "
         "are returned instead (default).",
     )
@@ -54,5 +54,5 @@ class CmdInput(ProtoModel):
     )
     config: Optional["TaskConfig"] = Field(
         None,
-        description="Config class for executing tasks. See :class: ``mmic.components.base.config.TaskConfig``.",
+        description="Config class for executing tasks. See :class:`mmic.components.base.config.TaskConfig`.",
     )
