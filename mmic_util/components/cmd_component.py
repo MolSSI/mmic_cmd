@@ -55,6 +55,9 @@ class CmdComponent(SpecificComponent):
         )
 
         if exe_success:
+            if proc.get("stderr"):
+                if inputs.raise_err:
+                    raise RuntimeError(proc.get("stderr"))
             return exe_success, self.output()(
                 outfiles=proc.get("outfiles"),
                 stdout=proc.get("stdout"),
