@@ -50,9 +50,10 @@ jobs:
         python -m pip install . --no-deps
         conda list
 
-    - uses: ammaraskar/sphinx-action@master
-      with:
-        docs-folder: "docs/src/"
+    - name: Build docs
+      shell: bash -l {0}
+      run: |
+        cd docs/src && bash build.sh
 
     - name: Commit documentation changes
       shell: bash -l {0}
