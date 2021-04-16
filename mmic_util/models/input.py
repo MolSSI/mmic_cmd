@@ -25,7 +25,7 @@ class CmdInput(ProtoModel):
     raise_err: Optional[bool] = Field(
         False,
         description="If set to True, a runtime exception is raised when stderr is not empty.",
-    ) 
+    )
     as_binary: Optional[List[str]] = Field(
         None, description="Keys of `infiles` or `outfiles` to be treated as bytes."
     )
