@@ -13,28 +13,37 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
 # Incase the project was not installed
-import os
 import sys
+from pathlib import Path
+import os
 
 sys.path.insert(0, os.path.abspath(".."))
 
 import mmic_util
 
-
 # -- Project information -----------------------------------------------------
 
 project = "mmic_util"
 copyright = (
-    "2021, Andrew Abi-Mansour. Project structure based on the "
+    "2021, MolSSI. Project structure based on the "
     "Computational Molecular Science Python Cookiecutter version 1.5"
 )
-author = "Andrew Abi-Mansour"
+author = "MolSSI"
 
 # The short X.Y version
 version = ""
 # The full version, including alpha/beta/rc tags
 release = ""
 
+autodoc_default_flags = [
+    # Make sure that any autodoc declarations show the right members
+    "members",
+    "inherited-members",
+    "private-members",
+    "show-inheritance",
+]
+
+numpydoc_show_class_members = False
 
 # -- General configuration ---------------------------------------------------
 
