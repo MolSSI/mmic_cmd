@@ -1,7 +1,4 @@
-API Documentation
-=================
-
-.. autosummary::
-   :toctree: autosummary
-
-   mmic_util.canvas
+API
+######
+.. automodule:: mmic_util.components
+   :members:
