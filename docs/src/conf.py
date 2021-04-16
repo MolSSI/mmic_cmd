@@ -30,7 +30,7 @@ copyright = (
 author = "MolSSI"
 
 # The short X.Y version
-version = ""
+version = mmic_util.__version__
 # The full version, including alpha/beta/rc tags
 release = ""
 
@@ -41,8 +41,6 @@ autodoc_default_flags = [
     "private-members",
     "show-inheritance",
 ]
-
-numpydoc_show_class_members = False
 
 # -- General configuration ---------------------------------------------------
 
