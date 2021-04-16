@@ -1,5 +1,5 @@
 """
-mmic_util
+mmic_cmd
 A short description of the project.
 """
 

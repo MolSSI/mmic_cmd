@@ -1,5 +1,5 @@
 """
-mmic_util.py
+mmic_cmd.py
 A short description of the project.
 
 Handles the primary functions
