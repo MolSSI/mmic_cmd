@@ -43,7 +43,7 @@ jobs:
         auto-activate-base: false
         show-channel-urls: true
 
-    - name: Install package & its deps
+    - name: Install package           
       # conda setup requires this special shell
       shell: bash -l {0}
       run: |
@@ -55,6 +55,7 @@ jobs:
         docs-folder: "docs/src/"
 
     - name: Commit documentation changes
+      shell: bash -l {0}
       run: |
         cp -r docs/src/_build/html/* docs/
         git config --local user.email "action@github.com"
