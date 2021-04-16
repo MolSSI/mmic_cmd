@@ -20,15 +20,14 @@ jobs:
     - uses: actions/checkout@v1
     - uses: ammaraskar/sphinx-action@master
       with:
-        docs-folder: "docs/"
+        docs-folder: "docs/src/"
 
     - name: Commit documentation changes
       run: |
         git clone https://github.com/MolSSI/mmic_util.git
-        cp -r docs/_build/html/* docs/
-        cd gh-pages
+        cp -r docs/src/_build/html/* docs/
         git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.name "github-actions[bot]"
         git add .
         git commit -m "Update documentation" -a || true
         # The above command will fail if no changes were present, so we ignore
@@ -37,6 +36,5 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        branch: gh-pages
-        directory: gh-pages
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+	github_token: ${{ secrets.GITHUB_TOKEN }}
