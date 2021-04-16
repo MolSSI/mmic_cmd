@@ -15,9 +15,8 @@
 # Incase the project was not installed
 import sys
 from pathlib import Path
-import os
 
-sys.path.insert(0, os.path.abspath(".."))
+sys.path.insert(0, Path("../..").absolute())
 
 import mmic_util
 
