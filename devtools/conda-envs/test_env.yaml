@@ -19,4 +19,4 @@ dependencies:
     - codecov
     - git+https://github.com/MolSSI/mmic
     - git+https://github.com/MolSSI/mmelemental
-    - git+https://github.com/Andrew-AbiMansour/QCEngine --single-branch --branch execute
+    - git+https://github.com/Andrew-AbiMansour/qcengine@execute
