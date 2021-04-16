@@ -1,4 +1,4 @@
 Models
 ######
-.. automodule:: mmic_util.models
+.. automodule:: mmic_cmd.models
    :members:

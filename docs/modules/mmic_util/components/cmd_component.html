@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mmic_util.components.cmd_component &mdash; mmic_util  documentation</title>
+  <title>mmic_cmd.components.cmd_component &mdash; mmic_cmd  documentation</title>
   
 
   
@@ -207,7 +207,7 @@
         
           <li><a href="../../index.html">Module code</a> &gt;</li>
         
-      <li>mmic_util.components.cmd_component</li>
+      <li>mmic_cmd.components.cmd_component</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -235,7 +235,7 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <h1>Source code for mmic_util.components.cmd_component</h1><div class="highlight"><pre>
+  <h1>Source code for mmic_cmd.components.cmd_component</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">qcengine.util</span> <span class="kn">import</span> <span class="n">execute</span>
 <span class="kn">from</span> <span class="nn">mmic.components.blueprints</span> <span class="kn">import</span> <span class="n">SpecificComponent</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span>
@@ -246,7 +246,7 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;CmdComponent&quot;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="CmdComponent"><a class="viewcode-back" href="../../../api.html#mmic_util.components.CmdComponent">[docs]</a><span class="k">class</span> <span class="nc">CmdComponent</span><span class="p">(</span><span class="n">SpecificComponent</span><span class="p">):</span>
+<div class="viewcode-block" id="CmdComponent"><a class="viewcode-back" href="../../../api.html#mmic_cmd.components.CmdComponent">[docs]</a><span class="k">class</span> <span class="nc">CmdComponent</span><span class="p">(</span><span class="n">SpecificComponent</span><span class="p">):</span>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">input</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">CmdInput</span>

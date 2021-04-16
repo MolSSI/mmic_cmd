@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mmic_util.models.output &mdash; mmic_util  documentation</title>
+  <title>mmic_cmd.models.output &mdash; mmic_cmd  documentation</title>
   
 
   
@@ -207,7 +207,7 @@
         
           <li><a href="../../index.html">Module code</a> &gt;</li>
         
-      <li>mmic_util.models.output</li>
+      <li>mmic_cmd.models.output</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -235,7 +235,7 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <h1>Source code for mmic_util.models.output</h1><div class="highlight"><pre>
+  <h1>Source code for mmic_cmd.models.output</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">mmelemental.models</span> <span class="kn">import</span> <span class="n">ProtoModel</span>
 <span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Any</span>
@@ -245,7 +245,7 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;CmdOutput&quot;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="CmdOutput"><a class="viewcode-back" href="../../../models.html#mmic_util.models.CmdOutput">[docs]</a><span class="k">class</span> <span class="nc">CmdOutput</span><span class="p">(</span><span class="n">ProtoModel</span><span class="p">):</span>
+<div class="viewcode-block" id="CmdOutput"><a class="viewcode-back" href="../../../models.html#mmic_cmd.models.CmdOutput">[docs]</a><span class="k">class</span> <span class="nc">CmdOutput</span><span class="p">(</span><span class="n">ProtoModel</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Output model for commend-line execution. &quot;&quot;&quot;</span>
 
     <span class="n">stdout</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Standard output.&quot;</span><span class="p">)</span>
