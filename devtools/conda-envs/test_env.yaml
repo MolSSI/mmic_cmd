@@ -16,6 +16,7 @@ dependencies:
 
     # Pip-only installs
   - pip:
+    - sphinx
     - codecov
     - git+https://github.com/MolSSI/mmic
     - git+https://github.com/MolSSI/mmelemental
