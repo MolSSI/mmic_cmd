@@ -1,10 +1,9 @@
-mmic_util
+mmic_cmd
 ==============================
 [//]: # (Badges)
-[![GitHub Actions Build Status](https://github.com/MolSSI/mmic_util/workflows/CI/badge.svg)](https://github.com/MolSSI/mmic_util/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/MolSSI/mmic_util/branch/main/graph/badge.svg)](https://codecov.io/gh/MolSSI/mmic_util/branch/main)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/MolSSI/mmic_util.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/MolSSI/mmic_util/context:python)
-[![docs](https://github.com/MolSSI/mmic_util/actions/workflows/doc.yaml/badge.svg)](https://molssi.github.io/mmic_util)
+[![GitHub Actions Build Status](https://github.com/MolSSI/mmic_cmd/workflows/CI/badge.svg)](https://github.com/MolSSI/mmic_cmd/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/MolSSI/mmic_cmd/branch/main/graph/badge.svg)](https://codecov.io/gh/MolSSI/mmic_cmd/branch/main)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/MolSSI/mmic_cmd.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/MolSSI/mmic_cmd/context:python)
 
 Package that provides general-purpose utility components.
 A more thorough description to be followed in the near future ...
@@ -12,7 +11,7 @@ A more thorough description to be followed in the near future ...
 ## CmdComponent
 ### General execution
 ```python
-from mmic_util.components import CmdComponent
+from mmic_cmd.components import CmdComponent
 
 inp = {
     "command": [executable, "--arg", arg, "--out", ofile_name],
