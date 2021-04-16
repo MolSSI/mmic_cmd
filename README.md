@@ -4,6 +4,7 @@ mmic_util
 [![GitHub Actions Build Status](https://github.com/MolSSI/mmic_util/workflows/CI/badge.svg)](https://github.com/MolSSI/mmic_util/actions?query=workflow%3ACI)
 [![codecov](https://codecov.io/gh/MolSSI/mmic_util/branch/main/graph/badge.svg)](https://codecov.io/gh/MolSSI/mmic_util/branch/main)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/MolSSI/mmic_util.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/MolSSI/mmic_util/context:python)
+[![docs](https://github.com/MolSSI/mmic_util/actions/workflows/doc.yaml/badge.svg)](https://molssi.github.io/mmic_util)
 
 Package that provides general-purpose utility components.
 A more thorough description to be followed in the near future ...
