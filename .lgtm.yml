@@ -9,7 +9,7 @@ path_classifiers:
     - versioneer.py  # Set Versioneer.py to an external "library" (3rd party code)
     - devtools/*
   generated:
-    - mmic_util/_version.py
+    - mmic_cmd/_version.py
 queries:
 - exclude: py/not-named-self # Blocks Pydantic's @validator not accepting `self` until a better fix can be found
 - exclude: py/missing-equals # Blocks Pydantic's equivalent decorator
