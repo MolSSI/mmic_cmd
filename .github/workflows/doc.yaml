@@ -1,4 +1,4 @@
-name: "Docs Check"
+name: "Doc deployment"
 
 on:
   push:
@@ -15,7 +15,12 @@ on:
 
 jobs:
   docs:
-    runs-on: [ubuntu-latest, macos-latest, windows-latest]
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
     steps:
     - uses: actions/checkout@v1
     - uses: ammaraskar/sphinx-action@master
@@ -24,7 +29,6 @@ jobs:
 
     - name: Commit documentation changes
       run: |
-        git clone https://github.com/MolSSI/mmic_util.git
         cp -r docs/src/_build/html/* docs/
         git config --local user.email "action@github.com"
         git config --local user.name "github-actions[bot]"
