@@ -50,4 +50,4 @@ jobs:
 
     - name: Lint
       shell: bash
-      run: black mmic_util --check
+      run: black mmic_cmd --check
