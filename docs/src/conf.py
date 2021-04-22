@@ -18,11 +18,11 @@ from pathlib import Path
 
 sys.path.insert(0, Path("../..").absolute())
 
-import mmic_util
+import mmic_cmd
 
 # -- Project information -----------------------------------------------------
 
-project = "mmic_util"
+project = "mmic_cmd"
 copyright = (
     "2021, MolSSI. Project structure based on the "
     "Computational Molecular Science Python Cookiecutter version 1.5"
@@ -30,7 +30,7 @@ copyright = (
 author = "MolSSI"
 
 # The short X.Y version
-version = mmic_util.__version__
+version = mmic_cmd.__version__
 # The full version, including alpha/beta/rc tags
 release = ""
 
@@ -105,7 +105,21 @@ html_theme = "asteroid_sphinx_theme"
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    "logo": "_static/logo.png",
+    "canonical_url": "",
+    "analytics_id": "",
+    "logo_only": False,
+    "display_version": True,
+    "prev_next_buttons_location": "bottom",
+    "style_external_links": False,
+    # Toc options
+    "collapse_navigation": True,
+    "sticky_navigation": True,
+    "navigation_depth": 4,
+    "includehidden": True,
+    "titles_only": False,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -126,7 +140,7 @@ html_static_path = ["_static"]
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "mmic_utildoc"
+htmlhelp_basename = "mmic_cmddoc"
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -150,7 +164,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, "mmic_util.tex", "mmic_util Documentation", "mmic_util", "manual"),
+    (master_doc, "mmic_cmd.tex", "mmic_cmd Documentation", "mmic_cmd", "manual"),
 ]
 
 
@@ -158,7 +172,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "mmic_util", "mmic_util Documentation", [author], 1)]
+man_pages = [(master_doc, "mmic_cmd", "mmic_cmd Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------------
@@ -169,10 +183,10 @@ man_pages = [(master_doc, "mmic_util", "mmic_util Documentation", [author], 1)]
 texinfo_documents = [
     (
         master_doc,
-        "mmic_util",
-        "mmic_util Documentation",
+        "mmic_cmd",
+        "mmic_cmd Documentation",
         author,
-        "mmic_util",
+        "mmic_cmd",
         "A short description of the project.",
         "Miscellaneous",
     ),

@@ -1,4 +1,4 @@
 API
 ######
-.. automodule:: mmic_util.components
+.. automodule:: mmic_cmd.components
    :members:
