@@ -1,5 +1,5 @@
 from qcengine.util import execute
-from mmic.components.blueprints import SpecificComponent
+from mmic.components.blueprints import GenericComponent
 from typing import Any, Dict, Tuple
 from ..models import CmdOutput, CmdInput
 import ntpath
@@ -8,7 +8,7 @@ import os
 __all__ = ["CmdComponent"]
 
 
-class CmdComponent(SpecificComponent):
+class CmdComponent(GenericComponent):
     @classmethod
     def input(cls):
         return CmdInput
