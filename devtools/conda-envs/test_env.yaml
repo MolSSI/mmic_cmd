@@ -22,3 +22,4 @@ dependencies:
     - git+https://github.com/MolSSI/mmic
     - git+https://github.com/MolSSI/mmelemental
     - git+https://github.com/Andrew-AbiMansour/qcengine@execute
+    - git+https://github.com/MolSSI/cmselemental
