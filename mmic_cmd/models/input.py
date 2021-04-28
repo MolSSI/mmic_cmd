@@ -6,7 +6,7 @@ __all__ = ["CmdInput"]
 
 
 class CmdInput(ProtoModel):
-    """ Input model for command-line execution. """
+    """Input model for command-line execution."""
 
     command: List[str] = Field(..., description=".")
     infiles: List[str] = Field(

@@ -8,7 +8,7 @@ __all__ = ["CmdOutput"]
 
 
 class CmdOutput(ProtoModel):
-    """ Output model for commend-line execution. """
+    """Output model for commend-line execution."""
 
     stdout: str = Field(..., description="Standard output.")
     stderr: Optional[str] = Field(None, description="Standard error.")
