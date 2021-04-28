@@ -47,6 +47,7 @@ inp = {
     "outfiles": [ofile_name],
     "outfiles_load": False,
     "scratch_directory": path_to_scratch_dir,
+    "scratch_messy": True, # do not remove scratch dir
 }
 
 outp = CmdComponent.compute(inp)
@@ -58,7 +59,7 @@ ofile_path = outp.outfiles[ofile_name]
 
 ### Copyright
 
-Copyright (c) 2021, Andrew Abi-Mansour
+Copyright (c) 2021, MolSSI
 
 
 #### Acknowledgements
