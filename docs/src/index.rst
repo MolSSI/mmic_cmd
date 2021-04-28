@@ -10,7 +10,7 @@ Welcome to mmic_cmd's documentation!
    :maxdepth: 1
    :caption: Contents:
 
-   api
+   components
    models
 
 Indices and tables
