@@ -17,10 +17,10 @@ class CmdInput(ProtoModel):
         None,
         description="Output file name(s).",
     )
-    outfiles_load: Optional[bool] = Field(
-        True,
-        description="If set to True, output files are loaded in memory. Otherwise, the posix paths "
-        "are returned instead (default).",
+    outfiles_track: Optional[List[str]] = Field(
+        [],
+        description="Specifies which output files (by name) are tracked and not loaded in memory. The posix paths "
+        "(instead of file contents) are returned instead in `outfiles`.",
     )
     raise_err: Optional[bool] = Field(
         False,

@@ -46,7 +46,7 @@ class CmdComponent(GenericComponent):
             command=inputs.command,
             infiles=infiles,
             outfiles=inputs.outfiles,
-            outfiles_load=inputs.outfiles_load,
+            outfiles_track=inputs.outfiles_track,
             scratch_directory=scratch_directory,
             scratch_name=inputs.scratch_name,
             scratch_messy=inputs.scratch_messy,
