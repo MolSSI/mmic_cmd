@@ -133,7 +133,7 @@
               
               
                 <div class="version">
-                  0+untagged.117.g150b588
+                  0+untagged.121.g079ab3f
                 </div>
               
             
@@ -255,10 +255,10 @@
         <span class="kc">None</span><span class="p">,</span>
         <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Output file name(s).&quot;</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">outfiles_load</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
-        <span class="kc">True</span><span class="p">,</span>
-        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;If set to True, output files are loaded in memory. Otherwise, the posix paths &quot;</span>
-        <span class="s2">&quot;are returned instead (default).&quot;</span><span class="p">,</span>
+    <span class="n">outfiles_track</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="p">[],</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Specifies which output files (by name) are tracked and not loaded in memory. The posix paths &quot;</span>
+        <span class="s2">&quot;(instead of file contents) are returned instead in `outfiles`.&quot;</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">raise_err</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
         <span class="kc">False</span><span class="p">,</span>
