@@ -40,12 +40,18 @@ scratch_dir = outp.scratch_directory
 ```
 
 ### Tracking outfiles (no loading in memory)
+By default, all files specified in `outfiles` are loaded in memory. To prevent that,
+we pass `outfiles_track`, a list of output file names to track (and not load), to `compute`.
+The file path, rather than its contents, are returned in `outfiles` for file names specified
+in `outfiles_track`. To ensure these files persist (and do not get deleted) after execution,
+we must set `scratch_mess=True` as well.
+
 ```python
 inp = {
     "command": [executable, "--in", ifile_name, "--out", ofile_name],
     "infiles": [ifile_name], # copy file to scratch tmp dir
-    "outfiles": [ofile_name],
-    "outfiles_load": False,
+    "outfiles": [big_ofile_name, small_ofil_name],
+    "outfiles_track": [big_ofile_name],
     "scratch_directory": path_to_scratch_dir,
     "scratch_messy": True, # do not remove scratch dir
 }
@@ -53,7 +59,8 @@ inp = {
 outp = CmdComponent.compute(inp)
 
 stdout, stderr = outp.stdout, outp.stderr
-ofile_path = outp.outfiles[ofile_name]
+big_ofile_path = outp.outfiles[big_ofile_name] -> Path
+small_ofile_cont = outp.outfiles[small_ofile_name] -> str
 ```
 
 
