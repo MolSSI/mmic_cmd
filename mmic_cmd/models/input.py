@@ -1,4 +1,5 @@
-from mmelemental.models import ProtoModel
+from cmselemental.models import ProtoModel
+from mmic.components.base.config import TaskConfig
 from pydantic import Field
 from typing import Optional, List, Dict
 
@@ -18,7 +19,7 @@ class CmdInput(ProtoModel):
         description="Output file name(s).",
     )
     outfiles_track: Optional[List[str]] = Field(
-        [],
+        None,
         description="Specifies which output files (by name) are tracked and not loaded in memory. The posix paths "
         "(instead of file contents) are returned instead in `outfiles`.",
     )
@@ -56,7 +57,7 @@ class CmdInput(ProtoModel):
     exit_code: Optional[int] = Field(
         0, description="The exit code above which the process is considered failure."
     )
-    config: Optional["TaskConfig"] = Field(
+    config: Optional[TaskConfig] = Field(
         None,
         description="Config class for executing tasks. See :class:`mmic.components.base.config.TaskConfig`.",
     )

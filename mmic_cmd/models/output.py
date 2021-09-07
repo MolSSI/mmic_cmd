@@ -1,4 +1,4 @@
-from mmelemental.models import ProtoModel
+from cmselemental.models import ProtoModel
 from pydantic import Field
 from typing import Optional, Dict, Union, Any
 from pathlib import PosixPath
