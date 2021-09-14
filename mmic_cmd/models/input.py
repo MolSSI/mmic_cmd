@@ -12,11 +12,11 @@ class CmdInput(ProtoModel):
     command: List[str] = Field(..., description=".")
     infiles: List[str] = Field(
         None,
-        description="Input files (abs paths) to be written in scratch dir. May be {}.",
+        description="Input files (abs paths) to be written in scratch dir.",
     )
     outfiles: Optional[List[str]] = Field(
         None,
-        description="Output file name(s).",
+        description="Output file name(s). *Not* full paths.",
     )
     outfiles_track: Optional[List[str]] = Field(
         None,
@@ -28,7 +28,7 @@ class CmdInput(ProtoModel):
         description="If set to True, a runtime exception is raised when stderr is not empty.",
     )
     as_binary: Optional[List[str]] = Field(
-        None, description="Keys of `infiles` or `outfiles` to be treated as bytes."
+        None, description="Names of `infiles` or `outfiles` to be treated as bytes."
     )
     scratch_name: Optional[str] = Field(
         None, description="Passed to temporary_directory."
