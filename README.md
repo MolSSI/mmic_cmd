@@ -28,7 +28,7 @@ ofile_content = outp.outfiles[ofile_name]
 ```python
 inp = {
     "command": [executable, "--in", ifile_name, "--out", ofile_name],
-    "infiles": [ifile_name], # copy file to scratch tmp dir
+    "infiles": [ifile_path], # copy file to scratch tmp dir
     "outfiles": [ofile_name],
     "scratch_directory": path_to_scratch_dir,
 }
@@ -49,7 +49,7 @@ we must set `scratch_mess=True` as well.
 ```python
 inp = {
     "command": [executable, "--in", ifile_name, "--out", ofile_name],
-    "infiles": [ifile_name], # copy file to scratch tmp dir
+    "infiles": [ifile_path], # copy file to scratch tmp dir
     "outfiles": [big_ofile_name, small_ofil_name],
     "outfiles_track": [big_ofile_name],
     "scratch_directory": path_to_scratch_dir,
