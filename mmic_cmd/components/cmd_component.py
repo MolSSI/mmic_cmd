@@ -36,14 +36,18 @@ class CmdComponent(GenericComponent):
 
         infiles = {}
         if inputs.infiles:
-            flag = inputs.as_binary or "r"
             for fpath in inputs.infiles:
+                flag = "r"
                 fname = ntpath.basename(fpath)
+                if inputs.as_binary:
+                    if fname in inputs.as_binary:
+                        flag = "rb"
                 with open(fpath, flag) as fp:
                     infiles[fname] = fp.read()
 
         exe_success, proc = execute(
             command=inputs.command,
+            as_binary=inputs.as_binary,
             infiles=infiles,
             outfiles=inputs.outfiles,
             outfiles_track=inputs.outfiles_track,
