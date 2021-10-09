@@ -73,7 +73,7 @@ class CmdComponent(GenericComponent):
             if proc.get("stderr"):
                 if inputs.raise_err:
                     raise RuntimeError(proc.get("stderr"))
-            return exe_success, self.output()(
+            return exe_success, self.output(
                 outfiles=proc.get("outfiles"),
                 stdout=proc.get("stdout"),
                 stderr=proc.get("stderr"),
