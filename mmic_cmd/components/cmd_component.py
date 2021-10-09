@@ -61,7 +61,7 @@ class CmdComponent(GenericComponent):
             as_binary=inputs.as_binary,
             infiles=infiles,
             outfiles=inputs.outfiles,
-            outfiles_track=inputs.outfiles_track,
+            #outfiles_track=inputs.outfiles_track,
             scratch_directory=scratch_directory,
             scratch_name=inputs.scratch_name,
             scratch_messy=inputs.scratch_messy,
