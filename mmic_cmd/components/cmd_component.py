@@ -1,5 +1,6 @@
 from qcengine.util import execute
 from mmic.components.blueprints import GenericComponent
+from cmselemental.util.decorators import classproperty
 from typing import Any, Dict, Tuple
 from ..models import CmdOutput, CmdInput
 import ntpath
@@ -9,13 +10,23 @@ __all__ = ["CmdComponent"]
 
 
 class CmdComponent(GenericComponent):
-    @classmethod
+    @classproperty
     def input(cls):
         return CmdInput
 
-    @classmethod
+    @classproperty
     def output(cls):
         return CmdOutput
+
+    @classproperty
+    def version(cls) -> str:
+        """Finds program, extracts version, returns normalized version string.
+        Returns
+        -------
+        str
+            Return a valid, safe python version string.
+        """
+        return ""
 
     def execute(
         self,
@@ -23,7 +34,7 @@ class CmdComponent(GenericComponent):
     ) -> Tuple[bool, Dict[str, Any]]:
 
         if isinstance(inputs, dict):
-            inputs = self.input()(**inputs)
+            inputs = self.input(**inputs)
 
         env = os.environ.copy()
         scratch_directory = inputs.scratch_directory
