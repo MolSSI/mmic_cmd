@@ -20,6 +20,6 @@ dependencies:
     - asteroid-sphinx-theme
     - codecov
     - mmic
-    - git+https://github.com/MolSSI/mmelemental
+    - mmelemental
     - git+https://github.com/Andrew-AbiMansour/qcengine@execute
     - cmselemental
