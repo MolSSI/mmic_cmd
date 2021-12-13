@@ -1,4 +1,4 @@
-from qcengine.util import execute
+from .util import execute
 from mmic.components.blueprints import GenericComponent
 from typing import Any, Dict, Tuple
 from ..models import CmdOutput, CmdInput
