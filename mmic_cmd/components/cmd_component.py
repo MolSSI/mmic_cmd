@@ -1,5 +1,6 @@
 from .util import execute
-from mmic.components.blueprints import GenericComponent
+from mmic.components import GenericComponent
+from cmselemental.util.decorators import classproperty
 from typing import Any, Dict, Tuple
 from ..models import CmdOutput, CmdInput
 import ntpath
@@ -9,11 +10,11 @@ __all__ = ["CmdComponent"]
 
 
 class CmdComponent(GenericComponent):
-    @classmethod
+    @classproperty
     def input(cls):
         return CmdInput
 
-    @classmethod
+    @classproperty
     def output(cls):
         return CmdOutput
 
@@ -23,7 +24,7 @@ class CmdComponent(GenericComponent):
     ) -> Tuple[bool, Dict[str, Any]]:
 
         if isinstance(inputs, dict):
-            inputs = self.input()(**inputs)
+            inputs = self.input(**inputs)
 
         env = os.environ.copy()
         scratch_directory = inputs.scratch_directory
@@ -62,7 +63,7 @@ class CmdComponent(GenericComponent):
             if proc.get("stderr"):
                 if inputs.raise_err:
                     raise RuntimeError(proc.get("stderr"))
-            return exe_success, self.output()(
+            return exe_success, self.output(
                 outfiles=proc.get("outfiles"),
                 stdout=proc.get("stdout"),
                 stderr=proc.get("stderr"),
@@ -70,3 +71,20 @@ class CmdComponent(GenericComponent):
             )
         else:
             raise RuntimeError(proc.get("stderr"))
+
+    @classproperty
+    def version(cls) -> str:
+        """Returns distutils-style version string.
+
+        Examples
+        --------
+        The string ">1.0, !=1.5.1, <2.0" implies any version after 1.0 and before 2.0
+        is compatible, except 1.5.1
+
+        Returns
+        -------
+        str
+            Return a dist-utils valid version string.
+
+        """
+        return "0.0.0"
