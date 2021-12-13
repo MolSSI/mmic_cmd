@@ -19,7 +19,6 @@ dependencies:
     - sphinx
     - asteroid-sphinx-theme
     - codecov
-    - mmic
-    - mmelemental
-    - git+https://github.com/Andrew-AbiMansour/qcengine@execute
     - cmselemental
+    - mmelemental
+    - git+https://github.com/MolSSI/mmic

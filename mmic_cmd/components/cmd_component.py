@@ -1,4 +1,4 @@
-from qcengine.util import execute
+from .util import execute
 from mmic.components.blueprints import GenericComponent
 from cmselemental.util.decorators import classproperty
 from typing import Any, Dict, Tuple
