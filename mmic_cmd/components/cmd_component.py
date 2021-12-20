@@ -18,6 +18,16 @@ class CmdComponent(GenericComponent):
     def output(cls):
         return CmdOutput
 
+    @classproperty
+    def version(cls) -> str:
+        """Finds program, extracts version, returns normalized version string.
+        Returns
+        -------
+        str
+            Return a valid, safe python version string.
+        """
+        return ""
+
     def execute(
         self,
         inputs: Dict[str, Any],
@@ -51,7 +61,7 @@ class CmdComponent(GenericComponent):
             as_binary=inputs.as_binary,
             infiles=infiles,
             outfiles=inputs.outfiles,
-            outfiles_track=inputs.outfiles_track,
+            #outfiles_track=inputs.outfiles_track,
             scratch_directory=scratch_directory,
             scratch_name=inputs.scratch_name,
             scratch_messy=inputs.scratch_messy,
